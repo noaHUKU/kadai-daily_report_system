@@ -1,5 +1,6 @@
 //getPasswordEncrypt(src) のようにメソッド名をひとつ記述すれば実行できるハッシュ化メソッド
 //さまざまなコントローラで使えるよう、DBUtil のようなユーティリティに
+//新規登録の際に入力するパスワードに対するセキュリティー
 package utils;
 
 import java.security.MessageDigest;

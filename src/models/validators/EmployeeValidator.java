@@ -1,4 +1,4 @@
-//バリデーション（未入力チェック）用クラス
+//バリデーション（入力チェック）用クラス
 package models.validators;
 
 import java.util.ArrayList;
