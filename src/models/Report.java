@@ -23,8 +23,16 @@ import javax.persistence.Table;
         ),
     @NamedQuery(
             name = "getReportsCount",
-            query = "SELECT COUNT(r) FROM Report AS r"//日報情報の全件数を取得
+            query = "SELECT COUNT(r) FROM Report AS r"//日報情報の件数を取得
         ),
+    @NamedQuery(
+            name = "getMyAllReports",
+            query = "SELECT r FROM Report AS r WHERE r.employee = :employee ORDER BY r.id DESC"//作成者ごとの全日報情報の取得
+        ),
+        @NamedQuery(
+            name = "getMyReportsCount",
+            query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee"//作成者ごとの日報情報の件数取得
+        )
 
 })
 @Entity
