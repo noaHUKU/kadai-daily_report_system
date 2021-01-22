@@ -18,7 +18,7 @@
                     <th class="report_action">操作</th>
                 </tr>
                 <c:forEach var="report" items="${reports}" varStatus="status"><%-- 繰り返し表示 --%>
-                    <tr class="row${status.count % 2}">
+                    <tr class="row${status.count % 2}"><%-- 繰り返しをtrでまとめずにやったら１行目の横に繋がっていってしまった --%>
                         <td class="report_name"><c:out value="${report.employee.name}" /></td>
                         <td class="report_date"><fmt:formatDate value='${report.report_date}' pattern='yyyy-MM-dd' /></td>
                         <td class="report_title">${report.title}</td>
