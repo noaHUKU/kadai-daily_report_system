@@ -19,11 +19,11 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllReports",
-            query = "SELECT r FROM Report AS r ORDER BY r.id DESC"
+            query = "SELECT r FROM Report AS r ORDER BY r.id DESC"//すべての日報情報を取得
         ),
     @NamedQuery(
             name = "getReportsCount",
-            query = "SELECT COUNT(r) FROM Report AS r"
+            query = "SELECT COUNT(r) FROM Report AS r"//日報情報の全件数を取得
         ),
 
 })
@@ -34,7 +34,7 @@ public class Report {
     @GeneratedValue(strategy = GenerationType.IDENTITY)//リソース内での連番
     private Integer id;
 
-    @ManyToOne//1対多。データベースへの指定の仕方。テーブルAのidを保持するカラム
+    @ManyToOne//1対多。データベースへの指定の仕方。Employeeのidを保持するカラム
     @JoinColumn(name = "employee_id", nullable = false)//日報を登録した社員の社員番号
     private Employee employee;
 
